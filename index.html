@@ -9,27 +9,128 @@
   <body>
     <header>
       <nav>
-        <a href="#" class="logo">Weather Forecast</a>
-      </nav>
-    </header>
-    <main>
-      <section class="main-info">
         <form action="">
-          <input type="text" name="location" value="Berlin" id="location" placeholder="City Name" />
-          <button type="button" onclick="getWeather()">Submit</button>
+          <input type="text" name="location" value="Berlin" id="location" placeholder="Berlin" />
+          <button type="button" onclick="getWeather()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30">
+              <path
+                d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+              />
+            </svg>
+          </button>
         </form>
-
-        <div class="weather-img-container"></div>
-        <h2 class="location-output">Berlin</h2>
-        <p class="temp-celsius"></p>
+        <a href="#" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30">
+            <path
+              d="M433-80q-27 0-46.5-18T363-142l-9-66q-13-5-24.5-12T307-235l-62 26q-25 11-50 2t-39-32l-47-82q-14-23-8-49t27-43l53-40q-1-7-1-13.5v-27q0-6.5 1-13.5l-53-40q-21-17-27-43t8-49l47-82q14-23 39-32t50 2l62 26q11-8 23-15t24-12l9-66q4-26 23.5-44t46.5-18h94q27 0 46.5 18t23.5 44l9 66q13 5 24.5 12t22.5 15l62-26q25-11 50-2t39 32l47 82q14 23 8 49t-27 43l-53 40q1 7 1 13.5v27q0 6.5-2 13.5l53 40q21 17 27 43t-8 49l-48 82q-14 23-39 32t-50-2l-60-26q-11 8-23 15t-24 12l-9 66q-4 26-23.5 44T527-80h-94Zm7-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"
+            />
+          </svg>
+        </a>
+      </nav>
+      <!-- ver1
+      <section class="main-info">
+        <h5 class="location-output">Berlin</h5>
+        <div class="temp-img-flex">
+          <p class="temp-celsius"></p>
+          <div class="weather-img-container"></div>
+        </div>
         <p class="weather-description"></p>
         <p class="local-time"></p>
+        -->
+      <!--ver 2-->
+      <section class="main-clock">
+        <article>
+          <h5 class="location-output">Berlin</h5>
+          <p class="temp-celsius"></p>
+          <p class="weather-description"></p>
+          <p class="local-time"></p>
+        </article>
+        <div class="weather-img-container"></div>
+      </section>
+    </header>
+    <main>
+      <section class="additional-info">
+        <!-- 1 -->
+        <div class="flex-column">
+          <img src="./assets/img/rainy_light_FILL0_wght400_GRAD0_opsz24.svg" alt="chance of rain" />
+          <p class="humidity"></p>
+        </div>
+        <!-- 2 -->
+        <div class="flex-column">
+          <img src="./assets/img/air_FILL0_wght400_GRAD0_opsz24.svg" alt="" />
+          <p class="windspeed"></p>
 
+          <!-- 3 -->
+        </div>
+        <div class="flex-column">
+          <img src="./assets/img/sunny_FILL0_wght400_GRAD0_opsz24.svg" alt="sunrise" />
+          <p class="sunrise"></p>
+        </div>
+        <!-- 4 -->
+        <div class="flex-column">
+          <img src="./assets/img/clear_night_FILL0_wght400_GRAD0_opsz24.svg" alt="sunset" />
+          <p class="sundown"></p>
+        </div>
+      </section>
+
+      <section class="five-day-forecast">
+        <div class="forecast-selection">
+          <a href="#">5 Days</a>
+          <a href="#" class="highlight-link">
+            16 Days
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <path
+                d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="forecast-grid">
+          <!-- card-->
+          <div class="forecast-card">
+            <p id="day">Mo</p>
+            <img src="./assets/img/glass-icons/Sunny-glass.svg" alt="sunny" class="forecast-icon" />
+            <p class="temp-five-day-forecast">24°</p>
+          </div>
+          <!-- card end-->
+          <!-- card-->
+          <div class="forecast-card">
+            <p id="day">Mo</p>
+            <img src="./assets/img/glass-icons/Sunny-glass.svg" alt="sunny" class="forecast-icon" />
+            <p class="temp-five-day-forecast">24°</p>
+          </div>
+          <!-- card end-->
+          <!-- card-->
+          <div class="forecast-card">
+            <p id="day">Mo</p>
+            <img src="./assets/img/glass-icons/Sunny-glass.svg" alt="sunny" class="forecast-icon" />
+            <p class="temp-five-day-forecast">24°</p>
+          </div>
+          <!-- card end-->
+          <!-- card-->
+          <div class="forecast-card">
+            <p id="day">Mo</p>
+            <img src="./assets/img/glass-icons/Sunny-glass.svg" alt="sunny" class="forecast-icon" />
+            <p class="temp-five-day-forecast">24°</p>
+          </div>
+          <!-- card end-->
+          <!-- card-->
+          <div class="forecast-card">
+            <p id="day">Mo</p>
+            <img src="./assets/img/glass-icons/Sunny-glass.svg" alt="sunny" class="forecast-icon" />
+            <p class="temp-five-day-forecast">24°</p>
+          </div>
+          <!-- card end-->
+        </div>
+      </section>
+      <section class="rain-map-section">
+        <div class="rain-map">
+          <span class="map-space">Rainmap</span>
+        </div>
+      </section>
+      <section>
         <p class="air-pressure"></p>
-        <p class="humidity"></p>
-        <p class="windspeed"></p>
-        <p class="sundown"></p>
-        <p class="sunrise"></p>
         <p class="geo-coords"></p>
       </section>
     </main>

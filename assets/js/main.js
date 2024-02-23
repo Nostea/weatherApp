@@ -60,13 +60,13 @@ const getWeather = () => {
 
           locationOutput.innerHTML = `${locationInputValue}`;
           weatherImgOutput.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="${weatherDescription}">`;
-          temperatureOutput.innerHTML = `<span>${Math.round(temp)}</span>°C`;
+          temperatureOutput.innerHTML = `<span>${Math.round(temp)}°</span>`;
           weatherDescriptionOutput.innerHTML = `${weatherDescription}`;
-          humidityOutput.innerHTML = `Humidity: ${humidity}%`;
+          humidityOutput.innerHTML = `${humidity}%`;
           airPressureOutput.innerHTML = `Air Pressure: ${airpressure}mbar`;
-          windspeedOutput.innerHTML = `Windspeed: ${windspeed}`;
-          sunriseOutput.innerHTML = `Sunrise: ${sunriseTime}`;
-          sunsetOutput.innerHTML = `Sunset: ${sunsetTime}`;
+          windspeedOutput.innerHTML = `${windspeed}km/h`;
+          sunriseOutput.innerHTML = `${sunriseTime}`;
+          sunsetOutput.innerHTML = `${sunsetTime}`;
 
           //humidityOutput.innerHTML = `${}`;
         }); // end weather
@@ -78,7 +78,7 @@ const getWeather = () => {
         .then((forecastData) => {
           console.log(forecastData);
           const timestamp = "12:00:00";
-          const checkTimestamp = (timeItem) => timeItem.dt_txt.includes(timestamp);
+          const checkTimestamp = (timeItem) => timeItem.dt_txt.includes(timestamp); // Step 2
 
           const filteredData = forecastData.list.filter(checkTimestamp); // Step 1
           console.log(filteredData);
