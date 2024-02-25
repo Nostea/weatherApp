@@ -58,6 +58,15 @@ h5 {
   font-size: 2.3rem;
   font-weight: 400;
   padding-bottom: 1vh;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.local-time {
+  display: inline-block;
+  font-size: 2.3rem;
+  margin-left: 1.6rem;
+  font-weight: 200;
 }
 
 h6 {
@@ -71,11 +80,12 @@ span {
 
 p {
   font-size: var(--regular-fontsize);
+  padding-bottom: 1.6rem;
 }
 
 header {
-  padding: 2vh 4vw 30vh 4vw;
-  background-image: url(../img/day.jpeg);
+  padding: 2vh 4vw 10vh 4vw;
+  background-image: url(../img/weather/day.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,24 +95,35 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 4vh;
+  padding-bottom: 2vh;
 }
 
 input {
   font-size: var(--regular-fontsize);
-  max-width: 60%;
-  padding: 1.3rem 3rem;
+  max-width: 50%;
+  padding: 1rem 2rem;
   border-radius: 3rem;
   margin-left: 10vw;
-
+  /*
   background-color: var(--bg-lightGrey);
   border: none;
-
-  /* 
+*/
+  color: var(--font-color-light);
   border: 2px solid var(--font-color-light);
-   background: none;
-  */
+  background: none;
+
   margin-right: 1rem;
+  transition: 0.1s ease-in;
+}
+
+input::placeholder {
+  color: var(--font-color-light);
+}
+
+input:focus {
+  background-color: var(--bg-lightGrey);
+  color: var(--font-color-lightTheme);
+  transition: 0.1s ease-in-out;
 }
 
 button {
@@ -160,17 +181,38 @@ a {
   flex-direction: column;
 }
 
+.location-icon-flex {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  fill: var(--bg-white);
+}
+
+.minMaxTemp {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.weather-img-container img {
+  padding-top: 3vh;
+}
+
 .additional-info {
   position: relative;
+  top: -4.5vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background-color: var(--bg-white);
   border-radius: 3.2rem;
-  padding: 3vh 4vw;
+  padding: 1.5vh 4vw;
   margin-left: 4vw;
   margin-right: 4vw;
   filter: drop-shadow(5px 5px 20px rgba(110, 204, 180, 0.1));
   /* rgba(110, 204, 180, 0.1)  */
+}
+
+.additional-info p {
+  padding-bottom: 0;
 }
 
 .flex-column {
@@ -187,7 +229,7 @@ a {
 
 .five-day-forecast {
   background-color: var(--bg-lightGrey);
-  padding: 4vh 4vw;
+  padding: 0vh 4vw 4vh 4vw;
 }
 
 .forecast-selection {
@@ -244,7 +286,7 @@ a {
   background-position: center;
   background-size: cover;
   border-radius: 3rem;
-  height: 30vh;
+  height: 35rem;
   padding: 2vh 2vw;
 }
 
@@ -255,3 +297,15 @@ a {
   background-color: var(--accent-color);
   color: var(--font-color-light);
 }
+/*
+@media (min-width: 768px) {
+  .wrapper {
+    margin: auto;
+    border-radius: 40rem;
+    width: 600px;
+  }
+}
+
+@media (max-width: 576px) {
+}
+*/
