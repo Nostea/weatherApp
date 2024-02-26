@@ -77,14 +77,15 @@ span {
   line-height: 90%;
   padding-bottom: 8vh;
 }
-
+header p {
+  padding-bottom: 1.6rem;
+}
 p {
   font-size: var(--regular-fontsize);
-  padding-bottom: 1.6rem;
 }
 
 header {
-  padding: 2vh 4vw 10vh 4vw;
+  padding: 2vh 4vw 15vh 4vw;
   background-image: url(../img/weather/day.jpeg);
   background-position: center;
   background-size: cover;
@@ -204,7 +205,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
   background-color: var(--bg-white);
   border-radius: 3.2rem;
-  padding: 1.5vh 4vw;
+  padding: 2vh 4vw;
   margin-left: 4vw;
   margin-right: 4vw;
   filter: drop-shadow(5px 5px 20px rgba(110, 204, 180, 0.1));
