@@ -74,9 +74,9 @@ const getWeather = () => {
 
           const backgroundImgContainer = document.querySelector("header");
           if (timeUTCconversion >= sunsetMilSec || timeUTCconversion <= sunriseMilSec) {
-            backgroundImgContainer.style.backgroundImage = "url('/assets/img/weather/sky-night.jpeg')";
+            backgroundImgContainer.style.backgroundImage = "url('assets/img/weather/sky-night.jpeg')";
           } else {
-            backgroundImgContainer.style.backgroundImage = "url('/assets/img/weather/day.jpeg')";
+            backgroundImgContainer.style.backgroundImage = "url('assets/img/weather/day.jpeg')";
           }
           localTimeOutput.innerHTML = timeUTCconversion.toLocaleTimeString().slice(0, 5);
 
@@ -85,7 +85,7 @@ const getWeather = () => {
           temperatureOutput.innerHTML = `<span>${Math.round(temp)}°</span>`;
           weatherDescriptionOutput.innerHTML = `${weatherDescription}`;
           humidityOutput.innerHTML = `${humidity}%`;
-          airPressureOutput.innerHTML = `Air Pressure: ${airpressure}mbar`;
+          //airPressureOutput.innerHTML = `Air Pressure: ${airpressure}mbar`;
           windspeedOutput.innerHTML = `${Math.round(windspeed)}km/h`;
           sunriseOutput.innerHTML = `${sunriseTime.slice(0, 5)}`;
           sunsetOutput.innerHTML = `${sunsetTime.slice(0, 5)}`;
